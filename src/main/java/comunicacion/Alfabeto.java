@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Alfabeto extends Pictograma {
-	private static List<String> letras = new ArrayList<>();;
+	private static String[] letras;
 	private String interpretacion;
 
 	public Alfabeto(String origen, String[] strings, String interpretacion) {
 		super(origen);
-		for (String string : strings) {
-			Alfabeto.letras.add(string);
-		}
+		letras = strings;
 		this.interpretacion = interpretacion;
 	}
 
@@ -23,9 +21,9 @@ public class Alfabeto extends Pictograma {
 	@Override
 	public String toString() {
 		String cad = "";
-		for (int i = 1; i <= letras.size(); i++) {
-			cad += letras.get(i);
-			if (i < letras.size()) {
+		for (int i = 1; i <= letras.length; i++) {
+			cad += letras[i];
+			if (i < letras.length) {
 				cad += ", ";
 			}
 		}
@@ -33,14 +31,14 @@ public class Alfabeto extends Pictograma {
 	}
 
 	public int cantidadLetras() {
-		return letras.size();
+		return letras.length;
 	}
 
-	public List<String> getLetras() {
+	public String[] getLetras() {
 		return letras;
 	}
 
-	public void setLetras(List<String> letras) {
+	public void setLetras(String[] letras) {
 		Alfabeto.letras = letras;
 	}
 
