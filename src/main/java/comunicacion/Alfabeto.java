@@ -21,9 +21,9 @@ public class Alfabeto extends Pictograma {
 	@Override
 	public String toString() {
 		String cad = "";
-		for (int i = 1; i <= letras.length; i++) {
+		for (int i = 0; i < letras.length; i++) {
 			cad += letras[i];
-			if (i < letras.length) {
+			if (i < letras.length - 1) {
 				cad += ", ";
 			}
 		}
